@@ -38,7 +38,11 @@
             <artifactId>javafx-fxml</artifactId>
             <version>14</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.googlecode.libphonenumber</groupId>
+            <artifactId>libphonenumber</artifactId>
+            <version>3.5</version>
+        </dependency>
     </dependencies>
 
     <build>
