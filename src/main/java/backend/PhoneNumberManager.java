@@ -2,8 +2,6 @@ package backend;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.google.i18n.phonenumbers.Phonenumber;
-
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -29,7 +27,7 @@ public class PhoneNumberManager
             }
         }
 
-        if (!validCountryCode)
+        if (!validCountryCode && !phoneNumber.startsWith("+") && !phoneNumber.startsWith("00"))
         {
             phoneNumber = defaultCountryCode.concat(phoneNumber);
         }
