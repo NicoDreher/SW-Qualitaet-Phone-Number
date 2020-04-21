@@ -34,6 +34,7 @@ public class Controller {
     cb_country
         .setItems(FXCollections.observableList(Arrays.stream(Locale.getISOCountries()).collect(
             Collectors.toList())));
+    cb_country.getSelectionModel().select("DE");
     btn_calculateTelNr.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
