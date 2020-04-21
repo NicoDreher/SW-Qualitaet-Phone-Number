@@ -31,18 +31,9 @@ public class PhoneNumberManager
 
         if (!validCountryCode)
         {
-            throw new IllegalArgumentException("Country Code is invalid");
-        }
-
-        return phoneNumber;
-    }
-
-    public static String replaceNonExistingCountryCodeWithDefault(String phoneNumber)
-    {
-        if (!(phoneNumber.startsWith("00") || phoneNumber.startsWith("+")))
-        {
             phoneNumber = defaultCountryCode.concat(phoneNumber);
         }
+
         return phoneNumber;
     }
 
