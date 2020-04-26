@@ -38,7 +38,7 @@ public class Controller {
     btn_calculateTelNr.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-        lbl_telNr.setText(PhoneNumberManager.getPrefixFromCountryCode(txt_telNr.getText()));
+        // lbl_telNr.setText(PhoneNumberManager.getPrefixFromCountryCode(txt_telNr.getText()));
       }
     });
     cb_country.valueProperty().addListener(new ChangeListener() {
