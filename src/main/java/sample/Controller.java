@@ -55,7 +55,7 @@ public class Controller {
         lbl_telNr
             .setText(phoneNumber.toString());
         lbl_countryCode.setText(phoneNumber.getCountry().getCountryPrefix());
-        lbl_prefix.setText(phoneNumber.getPrefix().toString());
+        lbl_prefix.setText(phoneNumber.getPrefix()!=null?phoneNumber.getPrefix().toString():"");
         lbl_number.setText(String.valueOf(phoneNumber.getNumber()));
         lbl_extension.setText(String.valueOf(phoneNumber.getExtension()));
       } catch (NumberParseException | IllegalCountryCodeException e) {
