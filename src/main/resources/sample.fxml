@@ -57,9 +57,17 @@
             <Label layoutX="14.0" layoutY="14.0" text="Telefonnummer:" />
             <TextField fx:id="txt_telNr" layoutX="114.0" layoutY="10.0" />
             <Label layoutX="284.0" layoutY="14.0" text="Standardwert Ländervorwahl:" />
-            <Label layoutX="14.0" layoutY="345.0" text="Berechnete Telefonnummer:" />
-            <Label fx:id="lbl_telNr" layoutX="189.0" layoutY="345.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
+            <Label layoutX="14.0" layoutY="56.0" text="Berechnete Telefonnummer:" />
+            <Label fx:id="lbl_telNr" layoutX="189.0" layoutY="56.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
             <ComboBox fx:id="cb_country" layoutX="447.0" layoutY="10.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="88.0" prefHeight="17.0" prefWidth="150.0" text="Ländervorwahl:" />
+            <Label layoutX="14.0" layoutY="105.0" prefHeight="17.0" prefWidth="150.0" text="Ortsvorwahl:" />
+            <Label layoutX="14.0" layoutY="122.0" prefHeight="17.0" prefWidth="150.0" text="Telefonnummer:" />
+            <Label layoutX="14.0" layoutY="139.0" prefHeight="17.0" prefWidth="150.0" text="Durchwahl:" />
+            <Label fx:id="lbl_countryCode" layoutX="189.0" layoutY="88.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
+            <Label fx:id="lbl_prefix" layoutX="189.0" layoutY="105.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
+            <Label fx:id="lbl_number" layoutX="189.0" layoutY="122.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
+            <Label fx:id="lbl_extension" layoutX="189.0" layoutY="139.0" prefHeight="17.0" prefWidth="112.0" text="Label" />
       </children>
     </AnchorPane>
   </children>

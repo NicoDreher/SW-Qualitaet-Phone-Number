@@ -21,6 +21,18 @@ public class Controller {
   Label lbl_telNr;
 
   @FXML
+  Label lbl_countryCode;
+
+  @FXML
+  Label lbl_prefix;
+
+  @FXML
+  Label lbl_number;
+
+  @FXML
+  Label lbl_extension;
+
+  @FXML
   Button btn_calculateTelNr;
 
   @FXML
@@ -32,11 +44,20 @@ public class Controller {
   public void initialize() {
     phoneNumberManager = new PhoneNumberManager();
     lbl_telNr.setText("");
+    lbl_extension.setText("");
+    lbl_number.setText("");
+    lbl_prefix.setText("");
+    lbl_countryCode.setText("");
 
     btn_calculateTelNr.setOnAction(actionEvent -> {
       try {
+        var phoneNumber = phoneNumberManager.disassemblePhoneNumber(txt_telNr.getText());
         lbl_telNr
-            .setText(phoneNumberManager.disassemblePhoneNumber(txt_telNr.getText()).toString());
+            .setText(phoneNumber.toString());
+        lbl_countryCode.setText(phoneNumber.getCountry().getCountryPrefix());
+        lbl_prefix.setText(phoneNumber.getPrefix().toString());
+        lbl_number.setText(String.valueOf(phoneNumber.getNumber()));
+        lbl_extension.setText(String.valueOf(phoneNumber.getExtension()));
       } catch (NumberParseException | IllegalCountryCodeException e) {
         e.printStackTrace();
       }
