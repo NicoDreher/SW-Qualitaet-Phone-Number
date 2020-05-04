@@ -32,7 +32,6 @@ public class Country
         isoShort = iso;
         countryPrefix = getPrefixFromCountryCode(iso);
         country = new Locale("de", iso).getDisplayCountry();
-        ;
     }
 
     /**

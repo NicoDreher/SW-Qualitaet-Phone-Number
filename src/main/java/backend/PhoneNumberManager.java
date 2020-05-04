@@ -56,11 +56,12 @@ public class PhoneNumberManager
     {
         Phonenumber.PhoneNumber parsedPhoneNumber = PhoneNumberUtil.getInstance()
                 .parse(phoneNumber, defaultCountryCode);
-
+        System.out.println(PhoneNumberUtil.getInstance().format(parsedPhoneNumber, PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL));
         Country country = new Country();
         country.fromPrefixCode(String.format("+%d", parsedPhoneNumber.getCountryCode()));
-
-        return new PhoneNumber(country, null, parsedPhoneNumber.getNationalNumber(), parsedPhoneNumber.getExtension());
+        int i = Integer.parseInt(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(0, PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber)));
+        long l = Long.parseLong(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber), Long.toString(parsedPhoneNumber.getNationalNumber()).length()));
+        return new PhoneNumber(country, i, l, parsedPhoneNumber.getExtension());
     }
 
     /**
