@@ -59,9 +59,14 @@ public class PhoneNumberManager
         System.out.println(PhoneNumberUtil.getInstance().format(parsedPhoneNumber, PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL));
         Country country = new Country();
         country.fromPrefixCode(String.format("+%d", parsedPhoneNumber.getCountryCode()));
-        int i = Integer.parseInt(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(0, PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber)));
-        long l = Long.parseLong(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber), Long.toString(parsedPhoneNumber.getNationalNumber()).length()));
-        return new PhoneNumber(country, i, l, parsedPhoneNumber.getExtension());
+        if(PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber) > 0) {
+            int i = Integer.parseInt(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(0, PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber)));
+            long l = Long.parseLong(Long.toString(parsedPhoneNumber.getNationalNumber()).substring(PhoneNumberUtil.getInstance().getLengthOfNationalDestinationCode(parsedPhoneNumber), Long.toString(parsedPhoneNumber.getNationalNumber()).length()));
+            return new PhoneNumber(country, i, l, parsedPhoneNumber.getExtension());
+        }
+        else {
+            return new PhoneNumber(country, null, parsedPhoneNumber.getNationalNumber(), parsedPhoneNumber.getExtension());
+        }
     }
 
     /**
