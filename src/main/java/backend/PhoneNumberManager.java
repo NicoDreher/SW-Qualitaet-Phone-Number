@@ -55,10 +55,10 @@ public class PhoneNumberManager
             throws NumberParseException, IllegalCountryCodeException
     {
         Phonenumber.PhoneNumber parsedPhoneNumber = PhoneNumberUtil.getInstance()
-                .parse(phoneNumber, Country.getPrefixFromCountryCode(defaultCountryCode));
+                .parse(phoneNumber, defaultCountryCode);
 
         Country country = new Country();
-        country.fromPrefixCode(String.format("+ %d", parsedPhoneNumber.getCountryCode()));
+        country.fromPrefixCode(String.format("+%d", parsedPhoneNumber.getCountryCode()));
 
         return new PhoneNumber(country, null, parsedPhoneNumber.getNationalNumber(), parsedPhoneNumber.getExtension());
     }

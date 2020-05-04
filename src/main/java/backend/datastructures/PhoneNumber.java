@@ -46,7 +46,7 @@ public class PhoneNumber
 
         numberBuilder.append(" ").append(number);
 
-        if (extension != null)
+        if (extension != null && !extension.isEmpty())
         {
             numberBuilder.append("-").append(extension);
         }
