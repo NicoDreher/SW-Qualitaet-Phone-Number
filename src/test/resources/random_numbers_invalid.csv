@@ -1,0 +1,12 @@
+"+49 02A1 123456";"+49";201;123456;"";"NumberFormatException";
+"+44 0201123C56";"+44";201;123456;"";"NumberFormatException";
+"0033 0201/12@456";"+33";201;123456;"";"NumberFormatException";
+"+000 201123456";"+49";201;123456;"";"IllegalCountryCodeException";
+"+999 201 1234 56";"+49";201;123456;"";"IllegalCountryCodeException";
+"+49 (+41) 790-4780";"+49";941;7904780;"";"NumberFormatException";
+"DÄ 015115011900";"+49";151;15011900;"";"IllegalCountryCodeException";
+"+91 09870987 +99";"+91";98;70987;"";"NumberFormatException";
+"[+49] (0)89-800/849-5A";"+49";89800;849-50;"";"NumberFormatException";
+"+49 (8024) [9@0-477]";"+49";8024;990-477;"";"NumberFormatException";
+"DF 0201 1234B6";"+49";0201;123456;"";"IllegalCountryCodeException";
+"US 212-324-4?52";"+1";212;3244152;"";"NumberFormatException";
