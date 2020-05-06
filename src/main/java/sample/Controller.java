@@ -43,11 +43,17 @@ public class Controller {
 
   public void initialize() {
     phoneNumberManager = new PhoneNumberManager();
+    txt_telNr.setId("input");
     lbl_telNr.setText("");
+    lbl_telNr.setId("telNr");
     lbl_extension.setText("");
+    lbl_extension.setId("extension");
     lbl_number.setText("");
+    lbl_number.setId("number");
     lbl_prefix.setText("");
+    lbl_prefix.setId("prefix");
     lbl_countryCode.setText("");
+    lbl_countryCode.setId("countryCode");
 
     btn_calculateTelNr.setOnAction(actionEvent -> {
       try {
@@ -62,6 +68,7 @@ public class Controller {
         e.printStackTrace();
       }
     });
+    btn_calculateTelNr.setId("submit");
 
     cb_country.valueProperty().addListener(
         (observableValue, o, t1) -> PhoneNumberManager.setDefaultCountryCode(t1.toString()));
@@ -69,5 +76,6 @@ public class Controller {
         .setItems(FXCollections.observableList(Arrays.stream(Locale.getISOCountries()).collect(
             Collectors.toList())));
     cb_country.getSelectionModel().select("DE");
+    cb_country.setId("country");
   }
 }
